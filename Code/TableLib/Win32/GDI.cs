@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using HANDLE = System.IntPtr;
 using HWND = System.IntPtr;
 using HDC = System.IntPtr;
+using System.Text;
 
 namespace Win32
 {

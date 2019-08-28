@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 
 using HWND = System.IntPtr;
 using HANDLE = System.IntPtr;
+using System.Text;
 
 namespace Win32
 {
