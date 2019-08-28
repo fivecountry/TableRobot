@@ -8,10 +8,18 @@ using System.Diagnostics;
 using System.Collections;
 using System.Drawing;
 using System.Windows.Automation;
+using System.Windows.Forms;
+
 namespace TableRobot.Util
 {
     public class MyAPI
     {
+        [DllImport("user32.dll")]
+        public static extern IntPtr WindowFromPoint(Point Point);
+        [DllImport("user32.dll")]
+        public static extern bool GetCursorPos(out Point lpPoint);
+        [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
         [DllImport("kernel32")]
         public static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
         [DllImport("kernel32.dll")]
@@ -40,8 +48,12 @@ namespace TableRobot.Util
         public static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpClassName, string lpWindowName);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern int SendMessage(IntPtr hWnd, int msg, int wParam, int lparam);
+        [DllImport("User32.dll")]
+        private static extern Int32 SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, StringBuilder lParam);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern int PostMessage(IntPtr hWnd, int msg, int wParam, int lparam);
+        [DllImport("user32.dll ", CharSet = CharSet.Unicode)]
+        public static extern IntPtr PostMessage(IntPtr hwnd, int wMsg, IntPtr wParam, IntPtr lParam);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         static extern int ChangeDisplaySettings([In] ref DEVMODE lpDevMode, int dwFlags);
         [DllImport("user32.dll")]
@@ -58,6 +70,16 @@ namespace TableRobot.Util
         public const int WM_CLOSE = 0x0010;
         public const int WM_SYSCOMMAND = 0x0112;
         public const int SC_MAXIMIZE = 0xF030;     //最大化窗口
+
+        /// <summary>
+        /// 设置文本内容的消息
+        /// </summary>
+        public const int WM_SETTEXT = 0x000C;
+
+        /// <summary>
+        /// 鼠标点击消息
+        /// </summary>
+        public const int BM_CLICK = 0x00F5;
 
         public enum DMDO
         {
@@ -680,6 +702,17 @@ namespace TableRobot.Util
             p.Start();
             p.WaitForExit();
             p.Close();
+        }
+
+        public static void ClickButton(IntPtr buttonHandle)
+        {
+            Message msg = Message.Create(buttonHandle, BM_CLICK, new IntPtr(0), new IntPtr(0));
+            PostMessage(msg.HWnd, msg.Msg, msg.WParam, msg.LParam);
+        }
+
+        public static void SetTextBoxString(IntPtr textboxHandle, string content)
+        {
+            SendMessage(textboxHandle, WM_SETTEXT, IntPtr.Zero, new StringBuilder(content));
         }
     }
 }
