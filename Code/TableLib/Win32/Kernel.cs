@@ -756,7 +756,7 @@ namespace Win32
 		[DllImport("advapi32")] public static extern int GetSidLengthRequired(Byte nSubAuthorityCount);
 		[DllImport("advapi32")] public static extern int GetSidSubAuthority(IntPtr pSid, int nSubAuthority);
 		[DllImport("advapi32")] public static extern int GetTokenInformation(int TokenHandle, short TokenInformationClass, IntPtr TokenInformation, int TokenInformationLength, int ReturnLength);
-		[DllImport("advapi32")] public static extern int GetUserName(StringBuilderBuilder lpBuffer, int nSize);
+		[DllImport("advapi32")] public static extern int GetUserName(StringBuilder lpBuffer, int nSize);
 		[DllImport("advapi32")] public static extern int ImpersonateNamedPipeClient(HANDLE hNamedPipe);
 		[DllImport("advapi32")] public static extern int ImpersonateSelf(short ImpersonationLevel);
 		[DllImport("advapi32")] public static extern int InitializeAcl(ref ACL pAcl, int nAclLength, int dwAclRevision);
@@ -1007,7 +1007,7 @@ namespace Win32
 		[DllImport("kernel32")] public static extern int GetStringTypeEx(int Locale, int dwInfoType, StringBuilder lpSrcStr, int cchSrc, short lpCharType);
 		[DllImport("kernel32")] public static extern int GetStringTypeW(int dwInfoType, StringBuilder lpSrcStr, int cchSrc, short lpCharType);
 		[DllImport("kernel32")] public static extern int GetSystemDefaultLCID();
-		[DllImport("kernel32")] public static extern int GetSystemDirectory(StringBuilderBuilder lpBuffer, int nSize);
+		[DllImport("kernel32")] public static extern int GetSystemDirectory(StringBuilder lpBuffer, int nSize);
 		[DllImport("kernel32")] public static extern int GetSystemPowerStatus(ref SYSTEM_POWER_STATUS lpSystemPowerStatus);
 		[DllImport("kernel32")] public static extern int GetSystemTimeAdjustment(int lpTimeAdjustment, ref int lpTimeIncrement, ref int lpTimeAdjustmentDisabled);
 		[DllImport("kernel32")] public static extern int GetTapeParameters(HANDLE hDevice, int dwOperation, ref int lpdwSize, IntPtr lpTapeInformation);
@@ -1026,7 +1026,7 @@ namespace Win32
 		[DllImport("kernel32")] public static extern int GetVersion();
 		[DllImport("kernel32")] public static extern int GetVersionEx(ref OSVERSIONINFO lpVersionInformation);
 		[DllImport("kernel32")] public static extern int GetVolumeInformation(StringBuilder lpRootPathName, StringBuilder lpVolumeNameBuffer, int nVolumeNameSize, ref int lpVolumeSerialNumber, ref int lpMaximumComponentLength, ref int lpFileSystemFlags, StringBuilder lpFileSystemNameBuffer, int nFileSystemNameSize);
-		[DllImport("kernel32")] public static extern int GetWindowsDirectory(StringBuilderBuilder lpBuffer, int nSize);
+		[DllImport("kernel32")] public static extern int GetWindowsDirectory(StringBuilder lpBuffer, int nSize);
 		[DllImport("kernel32")] public static extern int GlobalAlloc(int wFlags, int dwBytes);
 		[DllImport("kernel32")] public static extern int GlobalCompact(int dwMinFree);
 		[DllImport("kernel32")] public static extern int GlobalFlags(HANDLE hMem);
