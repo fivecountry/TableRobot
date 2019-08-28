@@ -584,7 +584,7 @@ namespace Win32
 	{
 		[DllImport("gdi32")] public static extern int AbortDoc(HDC hdc);
 		[DllImport("gdi32")] public static extern int AbortPath(HDC hdc);
-		[DllImport("gdi32")] public static extern int AddFontResource(string lpFileName);
+		[DllImport("gdi32")] public static extern int AddFontResource(StringBuilder lpFileName);
 		[DllImport("gdi32")] public static extern int AngleArc(HDC hdc, int x, int y, int dwRadius, double eStartAngle, double eSweepAngle);
 		[DllImport("gdi32")] public static extern int AnimatePalette(HANDLE hPalette, int wStartIndex, int wNumEntries, PALETTEENTRY[] lpPaletteColors);
 		[DllImport("gdi32")] public static extern int Arc(HDC hdc, int X1, int Y1, int X2, int Y2, int X3, int Y3, int X4, int Y4);
@@ -609,7 +609,7 @@ namespace Win32
 		[DllImport("gdi32")] public static extern int CreateColorSpace(ref LOGCOLORSPACE lplogcolorspace);
 		[DllImport("gdi32")] public static extern int CreateCompatibleBitmap(HDC hdc, int nWidth, int nHeight);
 		[DllImport("gdi32")] public static extern int CreateCompatibleDC(HDC hdc);
-		[DllImport("gdi32")] public static extern int CreateDC(string lpDriverName, StringBuilder lpDeviceName, StringBuilder lpOutput, ref DEVMODE lpInitData);
+		[DllImport("gdi32")] public static extern int CreateDC(StringBuilder lpDriverName, StringBuilder lpDeviceName, StringBuilder lpOutput, ref DEVMODE lpInitData);
 		[DllImport("gdi32")] public static extern int CreateDIBPatternBrush(HANDLE hPackedDIB, int wUsage);
 		[DllImport("gdi32")] public static extern int CreateDIBPatternBrushPt(IntPtr lpPackedDIB, int iUsage);
 		[DllImport("gdi32")] public static extern int CreateDIBSection(HWND hdc, ref BITMAPINFO pBitmapInfo, int un, ref IntPtr lplpVoid, HANDLE handle, int dw);
@@ -622,8 +622,8 @@ namespace Win32
 		[DllImport("gdi32")] public static extern int CreateFontIndirect(ref LOGFONT lpLogFont);
 		[DllImport("gdi32")] public static extern int CreateHalftonePalette(HDC hdc);
 		[DllImport("gdi32")] public static extern int CreateHatchBrush(int nIndex, int crColor);
-		[DllImport("gdi32")] public static extern int CreateIC(string lpDriverName, StringBuilder lpDeviceName, StringBuilder lpOutput, ref DEVMODE lpInitData);
-		[DllImport("gdi32")] public static extern int CreateMetaFile(string lpString);
+		[DllImport("gdi32")] public static extern int CreateIC(StringBuilder lpDriverName, StringBuilder lpDeviceName, StringBuilder lpOutput, ref DEVMODE lpInitData);
+		[DllImport("gdi32")] public static extern int CreateMetaFile(StringBuilder lpString);
 		[DllImport("gdi32")] public static extern int CreatePalette(ref LOGPALETTE lpLogPalette);
 		[DllImport("gdi32")] public static extern int CreatePatternBrush(HANDLE hBitmap);
 		[DllImport("gdi32")] public static extern int CreatePen(int nPenStyle, int nWidth, int crColor);
@@ -698,7 +698,7 @@ namespace Win32
 		[DllImport("gdi32")] public static extern int GetDIBits(int aHDC, HANDLE hBitmap, int nStartScan, int nNumScans, IntPtr lpBits, ref BITMAPINFO lpBI, int wUsage);
 		[DllImport("gdi32")] public static extern int GetDeviceCaps(HDC hdc, int nIndex);
 		[DllImport("gdi32")] public static extern int GetDeviceGammaRamp(HDC hdc, IntPtr lpv);
-		[DllImport("gdi32")] public static extern int GetEnhMetaFile(string lpszMetaFile);
+		[DllImport("gdi32")] public static extern int GetEnhMetaFile(StringBuilder lpszMetaFile);
 		[DllImport("gdi32")] public static extern int GetEnhMetaFileBits(HANDLE hemf, int cbBuffer, Byte lpbBuffer);
 		[DllImport("gdi32")] public static extern int GetEnhMetaFileDescription(HANDLE hemf, int cchBuffer, StringBuilder lpszDescription);
 		[DllImport("gdi32")] public static extern int GetEnhMetaFileHeader(HANDLE hemf, int cbBuffer, ref ENHMETAHEADER lpemh);
@@ -711,7 +711,7 @@ namespace Win32
 		[DllImport("gdi32")] public static extern int GetKerningPairs(HDC hdc, int cPairs, ref KERNINGPAIR lpkrnpair);
 		[DllImport("gdi32")] public static extern int GetLogColorSpace(HANDLE hcolorspace, ref LOGCOLORSPACE lplogcolorspace, int dw);
 		[DllImport("gdi32")] public static extern int GetMapMode(HDC hdc);
-		[DllImport("gdi32")] public static extern int GetMetaFile(string lpFileName);
+		[DllImport("gdi32")] public static extern int GetMetaFile(StringBuilder lpFileName);
 		[DllImport("gdi32")] public static extern int GetMetaFileBitsEx(HANDLE hMF, int nSize, IntPtr lpvData);
 		[DllImport("gdi32")] public static extern int GetMetaRgn(HDC hdc, HANDLE hRgn);
 		[DllImport("gdi32")] public static extern int GetMiterLimit(HDC hdc, double peLimit);
@@ -785,7 +785,7 @@ namespace Win32
 		[DllImport("gdi32")] public static extern int RectInRegion(HANDLE hRgn, ref RECT lpRect);
 		[DllImport("gdi32")] public static extern int RectVisible(HDC hdc, ref RECT lpRect);
 		[DllImport("gdi32")] public static extern int Rectangle(HDC hdc, int X1, int Y1, int X2, int Y2);
-		[DllImport("gdi32")] public static extern int RemoveFontResource(string lpFileName);
+		[DllImport("gdi32")] public static extern int RemoveFontResource(StringBuilder lpFileName);
 		[DllImport("gdi32")] public static extern int ResetDC(HDC hdc, ref DEVMODE lpInitData);
 		[DllImport("gdi32")] public static extern int ResizePalette(HANDLE hPalette, int nNumEntries);
 		[DllImport("gdi32")] public static extern int RestoreDC(HDC hdc, int nSavedDC);

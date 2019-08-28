@@ -81,19 +81,19 @@ namespace Win32
 
 	public abstract class Shell
 	{
-		[DllImport("shell32")] public static extern int CommandLineToArgv(string lpCmdLine, short pNumArgs);
-		[DllImport("shell32")] public static extern int DoEnvironmentSubst(string szString, int cbString);
+		[DllImport("shell32")] public static extern int CommandLineToArgv(StringBuilder lpCmdLine, short pNumArgs);
+		[DllImport("shell32")] public static extern int DoEnvironmentSubst(StringBuilder szString, int cbString);
 		[DllImport("shell32")] public static extern int DragQueryFile(HANDLE hDROP, int UINT, StringBuilder lpStr, int ch);
 		[DllImport("shell32")] public static extern int DragQueryPoint(HANDLE hDROP, ref POINT lpPoint);
 		[DllImport("shell32")] public static extern int DuplicateIcon(HANDLE hInst, HANDLE hIcon);
 		[DllImport("shell32")] public static extern int ExtractAssociatedIcon(HANDLE hInst, StringBuilder lpIconPath, ref int lpiIcon);
 		[DllImport("shell32")] public static extern int ExtractIcon(HANDLE hInst, StringBuilder lpszExeFileName, int nIconIndex);
-		[DllImport("shell32")] public static extern int ExtractIconEx(string lpszFile, int nIconIndex, ref int phiconLarge, ref int phiconSmall, int nIcons);
-		[DllImport("shell32")] public static extern int FindExecutable(string lpFile, StringBuilder lpDirectory, StringBuilder lpResult);
+		[DllImport("shell32")] public static extern int ExtractIconEx(StringBuilder lpszFile, int nIconIndex, ref int phiconLarge, ref int phiconSmall, int nIcons);
+		[DllImport("shell32")] public static extern int FindExecutable(StringBuilder lpFile, StringBuilder lpDirectory, StringBuilder lpResult);
 		[DllImport("shell32")] public static extern int SHAppBarMessage(int dwMessage, ref APPBARDATA pData);
 		[DllImport("shell32")] public static extern int SHFileOperation(ref SHFILEOPSTRUCT lpFileOp);
-		[DllImport("shell32")] public static extern int SHGetFileInfo(string pszPath, int dwFileAttributes, ref SHFILEINFO psfi, int cbFileInfo, int uFlags);
-		[DllImport("shell32")] public static extern int SHGetNewLinkInfo(string pszLinkto, StringBuilder pszDir, StringBuilder pszName, ref int pfMustCopy, int uFlags);
+		[DllImport("shell32")] public static extern int SHGetFileInfo(StringBuilder pszPath, int dwFileAttributes, ref SHFILEINFO psfi, int cbFileInfo, int uFlags);
+		[DllImport("shell32")] public static extern int SHGetNewLinkInfo(StringBuilder pszLinkto, StringBuilder pszDir, StringBuilder pszName, ref int pfMustCopy, int uFlags);
 		[DllImport("shell32")] public static extern int ShellAbout(HWND hwnd, StringBuilder szApp, StringBuilder szOtherStuff, HANDLE hIcon);
 		[DllImport("shell32")] public static extern int ShellExecute(HWND hwnd, StringBuilder lpOperation, StringBuilder lpFile, StringBuilder lpParameters, StringBuilder lpDirectory, int nShowCmd);
 		[DllImport("shell32")] public static extern int Shell_NotifyIcon(int dwMessage, ref NOTIFYICONDATA lpData);

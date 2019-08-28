@@ -99,17 +99,17 @@ namespace Win32
 
 	public abstract class Mpr
 	{
-		[DllImport("mpr")] public static extern int WNetAddConnection(string lpszNetPath, StringBuilder lpszPassword, StringBuilder lpszLocalName);
+		[DllImport("mpr")] public static extern int WNetAddConnection(StringBuilder lpszNetPath, StringBuilder lpszPassword, StringBuilder lpszLocalName);
 		[DllImport("mpr")] public static extern int WNetAddConnection2(ref NETRESOURCE lpNetResource, StringBuilder lpPassword, StringBuilder lpUserName, int dwFlags);
-		[DllImport("mpr")] public static extern int WNetCancelConnection(string lpszName, int bForce);
-		[DllImport("mpr")] public static extern int WNetCancelConnection2(string lpName, int dwFlags, int fForce);
+		[DllImport("mpr")] public static extern int WNetCancelConnection(StringBuilder lpszName, int bForce);
+		[DllImport("mpr")] public static extern int WNetCancelConnection2(StringBuilder lpName, int dwFlags, int fForce);
 		[DllImport("mpr")] public static extern int WNetCloseEnum(HANDLE hEnum);
 		[DllImport("mpr")] public static extern int WNetConnectionDialog(HWND hwnd, int dwType);
 		[DllImport("mpr")] public static extern int WNetDisconnectDialog(HWND hwnd, int dwType);
 		[DllImport("mpr")] public static extern int WNetEnumResource(HANDLE hEnum, ref int lpcCount, ref NETRESOURCE lpBuffer, ref int lpBufferSize);
-		[DllImport("mpr")] public static extern int WNetGetConnection(string lpszLocalName, StringBuilder lpszRemoteName, int cbRemoteName);
+		[DllImport("mpr")] public static extern int WNetGetConnection(StringBuilder lpszLocalName, StringBuilder lpszRemoteName, int cbRemoteName);
 		[DllImport("mpr")] public static extern int WNetGetLastError(int lpError, StringBuilder lpErrorBuf, int nErrorBufSize, StringBuilder lpNameBuf, int nNameBufSize);
-		[DllImport("mpr")] public static extern int WNetGetUser(string lpName, StringBuilder lpUserName, ref int lpnLength);
+		[DllImport("mpr")] public static extern int WNetGetUser(StringBuilder lpName, StringBuilder lpUserName, ref int lpnLength);
 		[DllImport("mpr")] public static extern int WNetOpenEnum(int dwScope, int dwType, int dwUsage, ref NETRESOURCE lpNetResource, ref int lphEnum);
 	}
 
