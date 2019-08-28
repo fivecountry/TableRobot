@@ -82,26 +82,26 @@ namespace Win32
 	{
 		[DllImport("shell32")] public static extern int CommandLineToArgv(string lpCmdLine, short pNumArgs);
 		[DllImport("shell32")] public static extern int DoEnvironmentSubst(string szString, int cbString);
-		[DllImport("shell32")] public static extern int DragQueryFile(HANDLE hDROP, int UINT, string lpStr, int ch);
+		[DllImport("shell32")] public static extern int DragQueryFile(HANDLE hDROP, int UINT, StringBuilder lpStr, int ch);
 		[DllImport("shell32")] public static extern int DragQueryPoint(HANDLE hDROP, ref POINT lpPoint);
 		[DllImport("shell32")] public static extern int DuplicateIcon(HANDLE hInst, HANDLE hIcon);
-		[DllImport("shell32")] public static extern int ExtractAssociatedIcon(HANDLE hInst, string lpIconPath, ref int lpiIcon);
-		[DllImport("shell32")] public static extern int ExtractIcon(HANDLE hInst, string lpszExeFileName, int nIconIndex);
+		[DllImport("shell32")] public static extern int ExtractAssociatedIcon(HANDLE hInst, StringBuilder lpIconPath, ref int lpiIcon);
+		[DllImport("shell32")] public static extern int ExtractIcon(HANDLE hInst, StringBuilder lpszExeFileName, int nIconIndex);
 		[DllImport("shell32")] public static extern int ExtractIconEx(string lpszFile, int nIconIndex, ref int phiconLarge, ref int phiconSmall, int nIcons);
-		[DllImport("shell32")] public static extern int FindExecutable(string lpFile, string lpDirectory, string lpResult);
+		[DllImport("shell32")] public static extern int FindExecutable(string lpFile, StringBuilder lpDirectory, StringBuilder lpResult);
 		[DllImport("shell32")] public static extern int SHAppBarMessage(int dwMessage, ref APPBARDATA pData);
 		[DllImport("shell32")] public static extern int SHFileOperation(ref SHFILEOPSTRUCT lpFileOp);
 		[DllImport("shell32")] public static extern int SHGetFileInfo(string pszPath, int dwFileAttributes, ref SHFILEINFO psfi, int cbFileInfo, int uFlags);
-		[DllImport("shell32")] public static extern int SHGetNewLinkInfo(string pszLinkto, string pszDir, string pszName, ref int pfMustCopy, int uFlags);
-		[DllImport("shell32")] public static extern int ShellAbout(HWND hwnd, string szApp, string szOtherStuff, HANDLE hIcon);
-		[DllImport("shell32")] public static extern int ShellExecute(HWND hwnd, string lpOperation, string lpFile, string lpParameters, string lpDirectory, int nShowCmd);
+		[DllImport("shell32")] public static extern int SHGetNewLinkInfo(string pszLinkto, StringBuilder pszDir, StringBuilder pszName, ref int pfMustCopy, int uFlags);
+		[DllImport("shell32")] public static extern int ShellAbout(HWND hwnd, StringBuilder szApp, StringBuilder szOtherStuff, HANDLE hIcon);
+		[DllImport("shell32")] public static extern int ShellExecute(HWND hwnd, StringBuilder lpOperation, StringBuilder lpFile, StringBuilder lpParameters, StringBuilder lpDirectory, int nShowCmd);
 		[DllImport("shell32")] public static extern int Shell_NotifyIcon(int dwMessage, ref NOTIFYICONDATA lpData);
 		[DllImport("shell32")] public static extern void DragAcceptFiles(HWND hwnd, int fAccept);
 		[DllImport("shell32")] public static extern void DragFinish(HANDLE hDrop);
 		[DllImport("shell32")] public static extern void SHFreeNameMappings(HANDLE hNameMappings);
-		[DllImport("shell32")] public static extern void WinExecError(HWND hwnd, int error, string lpstrFileName, string lpstrTitle);
+		[DllImport("shell32")] public static extern void WinExecError(HWND hwnd, int error, StringBuilder lpstrFileName, StringBuilder lpstrTitle);
 		[DllImport("shell32")] public static extern int SHBrowseForFolder(BROWSEINFO lpbi);
-		[DllImport("shell32")] public static extern int SHGetPathFromIDList(int pidList, string lpBuffer);
+		[DllImport("shell32")] public static extern int SHGetPathFromIDList(int pidList, StringBuilder lpBuffer);
 
 		public const int ABE_BOTTOM = 3;
 		public const int ABE_LEFT = 0;

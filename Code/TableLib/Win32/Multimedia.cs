@@ -519,7 +519,7 @@ namespace Win32
 		[DllImport("lz32")] public static extern int LZCopy(HANDLE hfSource, HANDLE hfDest);
 		[DllImport("lz32")] public static extern int LZInit(HANDLE hfSrc);
 		[DllImport("lz32")] public static extern int LZOpenFile(string lpszFile, ref OFSTRUCT lpOf, int style);
-		[DllImport("lz32")] public static extern int LZRead(HANDLE hfFile, string lpvBuf, int cbread);
+		[DllImport("lz32")] public static extern int LZRead(HANDLE hfFile, StringBuilder lpvBuf, int cbread);
 		[DllImport("lz32")] public static extern int LZSeek(HANDLE hfFile, int lOffset, int nOrigin);
 		[DllImport("lz32")] public static extern void LZClose(HANDLE hfFile);
 	}
@@ -533,7 +533,7 @@ namespace Win32
 		[DllImport("winmm")] public static extern int DefDriverProc(int dwDriverIdentifier, HANDLE hdrvr, int uMsg, int lParam1, int lParam2);
 		[DllImport("winmm")] public static extern int DrvGetModuleHandle(HANDLE hDriver);
 		[DllImport("winmm")] public static extern int GetDriverModuleHandle(HANDLE hDriver);
-		[DllImport("winmm")] public static extern int OpenDriver(string szDriverName, string szSectionName, int lParam2);
+		[DllImport("winmm")] public static extern int OpenDriver(string szDriverName, StringBuilder szSectionName, int lParam2);
 		[DllImport("winmm")] public static extern int PlaySound(string lpszName, HANDLE hModule, int dwFlags);
 		[DllImport("winmm")] public static extern int SendDriverMessage(HANDLE hDriver, int message, int lParam1, int lParam2);
 		[DllImport("winmm")] public static extern int auxGetDevCaps(int uDeviceID, ref AUXCAPS lpCaps, int uSize);
@@ -552,8 +552,8 @@ namespace Win32
 		[DllImport("winmm")] public static extern int mciExecute(string lpstrCommand);
 		[DllImport("winmm")] public static extern int mciGetCreatorTask(int wDeviceID);
 		[DllImport("winmm")] public static extern int mciGetDeviceID(string lpstrName);
-		[DllImport("winmm")] public static extern int mciGetDeviceIDFromElementID(int dwElementID, string lpstrType);
-		[DllImport("winmm")] public static extern int mciGetErrorString(int dwError, string lpstrBuffer, int uLength);
+		[DllImport("winmm")] public static extern int mciGetDeviceIDFromElementID(int dwElementID, StringBuilder lpstrType);
+		[DllImport("winmm")] public static extern int mciGetErrorString(int dwError, StringBuilder lpstrBuffer, int uLength);
 		[DllImport("winmm")] public static extern int mciSendCommand(int wDeviceID, int uMessage, int dwParam1, IntPtr dwParam2);
 		[DllImport("winmm")] public static extern int mciSendString(string lpstrCommand, StringBuilder lpstrReturnString, int uReturnLength, HWND hwndCallback);
 		[DllImport("winmm")] public static extern int midiConnect(HANDLE hmi, HANDLE hmo, IntPtr pReserved);
@@ -561,7 +561,7 @@ namespace Win32
 		[DllImport("winmm")] public static extern int midiInAddBuffer(HANDLE hMidiIn, ref MIDIHDR lpMidiInHdr, int uSize);
 		[DllImport("winmm")] public static extern int midiInClose(HANDLE hMidiIn);
 		[DllImport("winmm")] public static extern int midiInGetDevCaps(int uDeviceID, ref MIDIINCAPS lpCaps, int uSize);
-		[DllImport("winmm")] public static extern int midiInGetErrorText(int err, string lpText, int uSize);
+		[DllImport("winmm")] public static extern int midiInGetErrorText(int err, StringBuilder lpText, int uSize);
 		[DllImport("winmm")] public static extern int midiInGetID(HANDLE hMidiIn, ref int lpuDeviceID);
 		[DllImport("winmm")] public static extern int midiInGetNumDevs();
 		[DllImport("winmm")] public static extern int midiInMessage(HANDLE hMidiIn, int msg, int dw1, int dw2);
@@ -612,14 +612,14 @@ namespace Win32
 		[DllImport("winmm")] public static extern int mmioFlush(HANDLE hmmio, int uFlags);
 		[DllImport("winmm")] public static extern int mmioGetInfo(HANDLE hmmio, ref MMIOINFO lpmmioinfo, int uFlags);
 		[DllImport("winmm")] public static extern int mmioOpen(string szFileName, ref MMIOINFO lpmmioinfo, int dwOpenFlags);
-		[DllImport("winmm")] public static extern int mmioRead(HANDLE hmmio, string pch, int cch);
-		[DllImport("winmm")] public static extern int mmioRename(string szFileName, string SzNewFileName, ref MMIOINFO lpmmioinfo, int dwRenameFlags);
+		[DllImport("winmm")] public static extern int mmioRead(HANDLE hmmio, StringBuilder pch, int cch);
+		[DllImport("winmm")] public static extern int mmioRename(string szFileName, StringBuilder SzNewFileName, ref MMIOINFO lpmmioinfo, int dwRenameFlags);
 		[DllImport("winmm")] public static extern int mmioSeek(HANDLE hmmio, int lOffset, int iOrigin);
 		[DllImport("winmm")] public static extern int mmioSendMessage(HANDLE hmmio, int uMsg, int lParam1, int lParam2);
-		[DllImport("winmm")] public static extern int mmioSetBuffer(HANDLE hmmio, string pchBuffer, int cchBuffer, int uFlags);
+		[DllImport("winmm")] public static extern int mmioSetBuffer(HANDLE hmmio, StringBuilder pchBuffer, int cchBuffer, int uFlags);
 		[DllImport("winmm")] public static extern int mmioSetInfo(HANDLE hmmio, ref MMIOINFO lpmmioinfo, int uFlags);
 		[DllImport("winmm")] public static extern int mmioStringToFOURCC(string sz, int uFlags);
-		[DllImport("winmm")] public static extern int mmioWrite(HANDLE hmmio, string pch, int cch);
+		[DllImport("winmm")] public static extern int mmioWrite(HANDLE hmmio, StringBuilder pch, int cch);
 		[DllImport("winmm")] public static extern int mmsystemGetVersion();
 		[DllImport("winmm")] public static extern int sndPlaySound(string lpszSoundName, int uFlags);
 		[DllImport("winmm")] public static extern int timeBeginPeriod(int uPeriod);
@@ -632,7 +632,7 @@ namespace Win32
 		[DllImport("winmm")] public static extern int waveInAddBuffer(HANDLE hWaveIn, ref WAVEHDR lpWaveInHdr, int uSize);
 		[DllImport("winmm")] public static extern int waveInClose(HANDLE hWaveIn);
 		[DllImport("winmm")] public static extern int waveInGetDevCaps(int uDeviceID, ref WAVEINCAPS lpCaps, int uSize);
-		[DllImport("winmm")] public static extern int waveInGetErrorText(int err, string lpText, int uSize);
+		[DllImport("winmm")] public static extern int waveInGetErrorText(int err, StringBuilder lpText, int uSize);
 		[DllImport("winmm")] public static extern int waveInGetID(HANDLE hWaveIn, ref int lpuDeviceID);
 		[DllImport("winmm")] public static extern int waveInGetNumDevs();
 		[DllImport("winmm")] public static extern int waveInGetPosition(HANDLE hWaveIn, ref MMTIME lpInfo, int uSize);
@@ -646,7 +646,7 @@ namespace Win32
 		[DllImport("winmm")] public static extern int waveOutBreakLoop(HANDLE hWaveOut);
 		[DllImport("winmm")] public static extern int waveOutClose(HANDLE hWaveOut);
 		[DllImport("winmm")] public static extern int waveOutGetDevCaps(int uDeviceID, ref WAVEOUTCAPS lpCaps, int uSize);
-		[DllImport("winmm")] public static extern int waveOutGetErrorText(int err, string lpText, int uSize);
+		[DllImport("winmm")] public static extern int waveOutGetErrorText(int err, StringBuilder lpText, int uSize);
 		[DllImport("winmm")] public static extern int waveOutGetID(HANDLE hWaveOut, ref int lpuDeviceID);
 		[DllImport("winmm")] public static extern int waveOutGetNumDevs();
 		[DllImport("winmm")] public static extern int waveOutGetPitch(HANDLE hWaveOut, ref int lpdwPitch);
