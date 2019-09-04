@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
 namespace TableRobot
 {
+    /// <summary>
+    /// 回调函数代理
+    /// </summary>
+    public delegate bool CallBack(int hwnd, int lParam);
+
     public partial class MainForm : Form
     {
         public MainForm()
@@ -78,6 +84,27 @@ namespace TableRobot
             Message msg = Message.Create(new IntPtr(hwnd), 0x00F5, new IntPtr(0), new IntPtr(0));
             //点击hwnd_button句柄对应的按钮
             Win32.User.PostMessage(msg.HWnd, msg.Msg, msg.WParam.ToInt32(), msg.LParam.ToInt32());
+        }
+
+        [DllImport("user32.dll")]
+        public static extern int EnumChildWindows(IntPtr hWndParent, CallBack lpfn, int lParam);
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            IntPtr hWnd = new IntPtr(Win32.User.FindWindow(new StringBuilder("CalcFrame"), new StringBuilder("计算器")));
+            if (!hWnd.Equals(IntPtr.Zero))
+            {
+                CallBack cbb = new CallBack(enumChildWindowsCallBack);
+                const int methodHandle = Marshal.GetFunctionPointerForDelegate(cbb).ToInt32();
+                Win32.User.EnumChildWindows(hWnd, ref methodHandle, 0);
+            }
+        }
+
+        private bool enumChildWindowsCallBack(int hwnd, int lParam)
+        {
+            KeyValuePair<string, string> kvp = GetClassAndText(new IntPtr(hwnd));
+            System.Console.WriteLine(kvp.Key + "," + kvp.Value);
+            return true;
         }
     }
 }

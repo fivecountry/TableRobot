@@ -106,11 +106,11 @@ namespace Win32
 		[DllImport("mpr")] public static extern int WNetCloseEnum(HANDLE hEnum);
 		[DllImport("mpr")] public static extern int WNetConnectionDialog(HWND hwnd, int dwType);
 		[DllImport("mpr")] public static extern int WNetDisconnectDialog(HWND hwnd, int dwType);
-		[DllImport("mpr")] public static extern int WNetEnumResource(HANDLE hEnum, ref int lpcCount, ref NETRESOURCE lpBuffer, ref int lpBufferSize);
+		[DllImport("mpr")] public static extern int WNetEnumResource(HANDLE hEnum, IntPtr  lpcCount, ref NETRESOURCE lpBuffer, IntPtr  lpBufferSize);
 		[DllImport("mpr")] public static extern int WNetGetConnection(StringBuilder lpszLocalName, StringBuilder lpszRemoteName, int cbRemoteName);
 		[DllImport("mpr")] public static extern int WNetGetLastError(int lpError, StringBuilder lpErrorBuf, int nErrorBufSize, StringBuilder lpNameBuf, int nNameBufSize);
-		[DllImport("mpr")] public static extern int WNetGetUser(StringBuilder lpName, StringBuilder lpUserName, ref int lpnLength);
-		[DllImport("mpr")] public static extern int WNetOpenEnum(int dwScope, int dwType, int dwUsage, ref NETRESOURCE lpNetResource, ref int lphEnum);
+		[DllImport("mpr")] public static extern int WNetGetUser(StringBuilder lpName, StringBuilder lpUserName, IntPtr  lpnLength);
+		[DllImport("mpr")] public static extern int WNetOpenEnum(int dwScope, int dwType, int dwUsage, ref NETRESOURCE lpNetResource, IntPtr  lphEnum);
 	}
 
 	public abstract class NetApi
@@ -118,12 +118,12 @@ namespace Win32
 		[DllImport("Netapi32")] public static extern int NetApiBufferFree(int lpBuffer);
 		[DllImport("Netapi32")] public static extern int NetRemoteTOD(IntPtr yServer, int pBuffer);
 		[DllImport("Netapi32")] public static extern int NetUserChangePassword(IntPtr Domain, IntPtr User, Byte OldPass, Byte NewPass);
-		[DllImport("Netapi32")] public static extern int NetUserGetGroups(IntPtr lpServer, Byte UserName, int Level, ref int lpBuffer, int PrefMaxLen, ref int lpEntriesRead, ref int lpTotalEntries);
-		[DllImport("Netapi32")] public static extern int NetUserGetInfo(IntPtr lpServer, Byte UserName, int Level, ref int lpBuffer);
-		[DllImport("Netapi32")] public static extern int NetUserGetLocalGroups(IntPtr lpServer, Byte UserName, int Level, int Flags, ref int lpBuffer, int MaxLen, ref int lpEntriesRead, ref int lpTotalEntries);
+		[DllImport("Netapi32")] public static extern int NetUserGetGroups(IntPtr lpServer, Byte UserName, int Level, IntPtr  lpBuffer, int PrefMaxLen, IntPtr  lpEntriesRead, IntPtr  lpTotalEntries);
+		[DllImport("Netapi32")] public static extern int NetUserGetInfo(IntPtr lpServer, Byte UserName, int Level, IntPtr  lpBuffer);
+		[DllImport("Netapi32")] public static extern int NetUserGetLocalGroups(IntPtr lpServer, Byte UserName, int Level, int Flags, IntPtr  lpBuffer, int MaxLen, IntPtr  lpEntriesRead, IntPtr  lpTotalEntries);
 		[DllImport("Netapi32")] public static extern int NetWkstaGetInfo(IntPtr lpServer, int Level, IntPtr lpBuffer);
 		[DllImport("Netapi32")] public static extern int NetWkstaUserGetInfo(IntPtr reserved, int Level, IntPtr lpBuffer);
-		[DllImport("netapi32")] public static extern int NetUserAdd(IntPtr lpServer, int Level, ref USER_INFO_3 lpUser, ref int lpError);
+		[DllImport("netapi32")] public static extern int NetUserAdd(IntPtr lpServer, int Level, ref USER_INFO_3 lpUser, IntPtr  lpError);
 		[DllImport("netapi32")] public static extern int NetLocalGroupDelMembers(int psServer, int psLocalGroup, int lLevel, ref LOCALGROUP_MEMBERS_INFO_0 uMember, int lMemberCount);
 		[DllImport("netapi32")] public static extern int NetLocalGroupGetMembers(int psServer, int psLocalGroup, int lLevel, int pBuffer, int lMaxLength, int plEntriesRead, int plTotalEntries, int phResume);
 
