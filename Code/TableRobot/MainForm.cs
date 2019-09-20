@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using TableLib.Controls;
 
 namespace TableRobot
 {
@@ -130,6 +131,32 @@ namespace TableRobot
             var shell = CSScript.CreateFunc<object>(dynamicString.ToString());
             object obj = shell();
             System.Console.WriteLine(obj.ToString());
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            for (int kk = 0; kk < 30; kk++)
+            {
+                TimeLineItemUI item1 = new TimeLineItemUI();
+                item1.Dock = DockStyle.Top;
+                item1.DisplayText = "AAAAA" + kk;
+                item1.Height = 50;
+                item1.Click += item1_Click;
+                timeLineUI1.Items.Add(item1);
+            }
+        }
+
+        void item1_Click(object sender, EventArgs e)
+        {
+            TimeLineItemUI item = ((TimeLineItemUI)sender);
+            foreach (Control c in timeLineUI1.Items)
+            {
+                if (c is TimeLineItemUI)
+                {
+                    ((TimeLineItemUI)c).Selected = false;
+                }
+            }
+            item.Selected = true;
         }
     }
 }
