@@ -1,6 +1,6 @@
 ﻿namespace TableLib.Controls
 {
-    partial class TimeLineUI
+    internal partial class TimeLineUI
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -41,10 +41,10 @@
             // 
             this.plLeftLine.BackColor = System.Drawing.Color.SteelBlue;
             this.plLeftLine.Dock = System.Windows.Forms.DockStyle.Right;
-            this.plLeftLine.Location = new System.Drawing.Point(8, 0);
+            this.plLeftLine.Location = new System.Drawing.Point(10, 0);
             this.plLeftLine.Margin = new System.Windows.Forms.Padding(0);
             this.plLeftLine.Name = "plLeftLine";
-            this.plLeftLine.Size = new System.Drawing.Size(5, 569);
+            this.plLeftLine.Size = new System.Drawing.Size(3, 572);
             this.plLeftLine.TabIndex = 0;
             // 
             // plItemList
@@ -71,9 +71,9 @@
             // 
             this.panel3.Controls.Add(this.plLeftLine);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 6);
+            this.panel3.Location = new System.Drawing.Point(0, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(13, 569);
+            this.panel3.Size = new System.Drawing.Size(13, 572);
             this.panel3.TabIndex = 1;
             // 
             // panel2
@@ -82,7 +82,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(13, 6);
+            this.panel2.Size = new System.Drawing.Size(13, 3);
             this.panel2.TabIndex = 0;
             // 
             // TimeLineUI

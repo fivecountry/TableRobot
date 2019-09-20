@@ -33,6 +33,8 @@ namespace TableLib.Controls
             }
         }
 
+        public object Data { get; set; }
+
         public TimeLineItemUI()
         {
             InitializeComponent();
@@ -45,9 +47,9 @@ namespace TableLib.Controls
             sf.LineAlignment = StringAlignment.Center;
 
             e.Graphics.FillRectangle(new SolidBrush(BackColor), ClientRectangle);
-            e.Graphics.DrawString(DisplayText, Font, new SolidBrush(ForeColor), new Rectangle(10, 10, Width - 20, Height - 20), sf);
-            e.Graphics.DrawRectangle(new Pen(Selected ? Color.Red : Color.SteelBlue, 5), new Rectangle(10, 10, Width - 20, Height - 20));
-            e.Graphics.DrawLine(new Pen(Selected ? Color.Red : Color.SteelBlue, 5), new Point(0, Height / 2), new Point(10, Height / 2));
+            e.Graphics.DrawString(DisplayText, Font, new SolidBrush(ForeColor), new Rectangle(5, 5, Width - 10, Height - 10), sf);
+            e.Graphics.DrawRectangle(new Pen(Selected ? Color.Red : Color.SteelBlue, 3), new Rectangle(5, 5, Width - 10, Height - 10));
+            e.Graphics.DrawLine(new Pen(Selected ? Color.Red : Color.SteelBlue, 3), new Point(0, Height / 2), new Point(10, Height / 2));
         }
     }
 }

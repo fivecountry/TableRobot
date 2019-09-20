@@ -41,10 +41,10 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(0, 54);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(23, 390);
+            this.richTextBox1.Size = new System.Drawing.Size(824, 390);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -98,9 +98,10 @@
             // timeLineUI1
             // 
             this.timeLineUI1.BackColor = System.Drawing.Color.White;
-            this.timeLineUI1.Location = new System.Drawing.Point(295, 96);
+            this.timeLineUI1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.timeLineUI1.Location = new System.Drawing.Point(824, 54);
             this.timeLineUI1.Name = "timeLineUI1";
-            this.timeLineUI1.Size = new System.Drawing.Size(280, 336);
+            this.timeLineUI1.Size = new System.Drawing.Size(280, 390);
             this.timeLineUI1.TabIndex = 2;
             // 
             // MainForm
@@ -108,8 +109,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 444);
-            this.Controls.Add(this.timeLineUI1);
             this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.timeLineUI1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "MainForm";

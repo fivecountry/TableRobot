@@ -1,6 +1,6 @@
 ﻿namespace TableLib.Controls
 {
-    partial class TimeLineItemUI
+    partial class TimeLineControl
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,25 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tlContent = new TableLib.Controls.TimeLineUI();
             this.SuspendLayout();
             // 
-            // TimeLineItemUI
+            // tlContent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.tlContent.BackColor = System.Drawing.Color.White;
+            this.tlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlContent.Location = new System.Drawing.Point(0, 0);
+            this.tlContent.Name = "tlContent";
+            this.tlContent.Size = new System.Drawing.Size(657, 585);
+            this.tlContent.TabIndex = 0;
+            // 
+            // TimeLineControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.DoubleBuffered = true;
-            this.Font = new System.Drawing.Font("宋体", 10F);
-            this.ForeColor = System.Drawing.Color.OrangeRed;
-            this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "TimeLineItemUI";
-            this.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.Size = new System.Drawing.Size(390, 37);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TimeLineItemUI_Paint);
+            this.Controls.Add(this.tlContent);
+            this.Name = "TimeLineControl";
+            this.Size = new System.Drawing.Size(657, 585);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private TimeLineUI tlContent;
     }
 }
