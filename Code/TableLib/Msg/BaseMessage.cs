@@ -54,6 +54,11 @@ namespace TableLib.MsgAndSession
         public const string COMMAND_RUNTASKSCRIPT = "COMMAND_RUNTASKSCRIPT";
 
         /// <summary>
+        /// 数据库指令(用于Server和Designer之间的数据操作)
+        /// </summary>
+        public const string COMMAND_DB = "COMMAND_DB";
+
+        /// <summary>
         /// 从
         /// </summary>
         public string From { get; set; }
