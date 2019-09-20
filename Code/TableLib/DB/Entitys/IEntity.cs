@@ -8,6 +8,7 @@ namespace TableLib.DB.Entitys
     /// <summary>
     /// 数据实体抽象类
     /// </summary>
+    [Serializable]
     public abstract class IEntity : IBinder
     {
         /// <summary>

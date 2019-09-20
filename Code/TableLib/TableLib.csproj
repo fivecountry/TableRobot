@@ -48,8 +48,17 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Noear.Weed3">
+      <HintPath>..\..\Lib\Noear.Weed3.dll</HintPath>
+    </Reference>
+    <Reference Include="PESocket">
+      <HintPath>..\..\Lib\PESocket.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,7 +84,12 @@
     <Compile Include="Controls\TimeLineUI.Designer.cs">
       <DependentUpon>TimeLineUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="DB\ConnectionManager.cs" />
+    <Compile Include="DB\Entitys\IEntity.cs" />
+    <Compile Include="DB\Entitys\TaskScript.cs" />
+    <Compile Include="DB\Entitys\TaskScriptTree.cs" />
     <Compile Include="InputAPI.cs" />
+    <Compile Include="Msg\BaseMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Win32\ErrorCodes.cs" />
     <Compile Include="Win32\GDI.cs" />
@@ -102,6 +116,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
