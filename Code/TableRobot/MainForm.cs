@@ -158,5 +158,10 @@ namespace TableRobot
             }
             item.Selected = true;
         }
+
+        private void timeLineControl1_SelectedChanged(object sender, TimeLineSelectedChangedEventArgs args)
+        {
+
+        }
     }
 }

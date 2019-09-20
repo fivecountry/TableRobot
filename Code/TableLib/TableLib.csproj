@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\TimeLineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TimeLineControl.Designer.cs">
+      <DependentUpon>TimeLineControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TimeLineItemUI.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     <Compile Include="Win32\Win32.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\TimeLineControl.resx">
+      <DependentUpon>TimeLineControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\TimeLineItemUI.resx">
       <DependentUpon>TimeLineItemUI.cs</DependentUpon>
     </EmbeddedResource>

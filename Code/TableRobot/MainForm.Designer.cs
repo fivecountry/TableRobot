@@ -35,16 +35,16 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timeLineUI1 = new TableLib.Controls.TimeLineUI();
+            this.timeLineControl1 = new TableLib.Controls.TimeLineControl();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 54);
+            this.richTextBox1.Location = new System.Drawing.Point(247, 54);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(824, 390);
+            this.richTextBox1.Size = new System.Drawing.Size(857, 390);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -95,14 +95,15 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // timeLineUI1
+            // timeLineControl1
             // 
-            this.timeLineUI1.BackColor = System.Drawing.Color.White;
-            this.timeLineUI1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.timeLineUI1.Location = new System.Drawing.Point(824, 54);
-            this.timeLineUI1.Name = "timeLineUI1";
-            this.timeLineUI1.Size = new System.Drawing.Size(280, 390);
-            this.timeLineUI1.TabIndex = 2;
+            this.timeLineControl1.BackColor = System.Drawing.Color.White;
+            this.timeLineControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.timeLineControl1.Location = new System.Drawing.Point(0, 54);
+            this.timeLineControl1.Name = "timeLineControl1";
+            this.timeLineControl1.Size = new System.Drawing.Size(247, 390);
+            this.timeLineControl1.TabIndex = 2;
+            this.timeLineControl1.SelectedChanged += new TableLib.Controls.TimeLineSelectedChangedDelegate(this.timeLineControl1_SelectedChanged);
             // 
             // MainForm
             // 
@@ -110,7 +111,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 444);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.timeLineUI1);
+            this.Controls.Add(this.timeLineControl1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
@@ -130,7 +131,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private TableLib.Controls.TimeLineUI timeLineUI1;
+        private TableLib.Controls.TimeLineControl timeLineControl1;
     }
 }
 
