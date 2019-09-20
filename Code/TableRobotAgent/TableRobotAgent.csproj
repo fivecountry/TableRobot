@@ -56,6 +56,9 @@
     <Reference Include="CSScriptLibrary">
       <HintPath>..\..\Lib\CSScriptLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\Lib\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="Noear.Weed3">
       <HintPath>..\..\Lib\Noear.Weed3.dll</HintPath>
     </Reference>
@@ -122,6 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="robot_128px_1228948_easyicon.net.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TableLib\TableLib.csproj">
+      <Project>{7a4e5ce6-b36b-4a65-a863-b46b4175be24}</Project>
+      <Name>TableLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
