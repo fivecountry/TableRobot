@@ -1,7 +1,0 @@
-C:\Users\wcss\Desktop\TableRobot\Release\Designer\TableRobotDesigner.exe
-C:\Users\wcss\Desktop\TableRobot\Release\Designer\TableRobotDesigner.pdb
-C:\Users\wcss\Desktop\TableRobot\Code\TableRobotDesigner\obj\x86\Debug\TableRobotDesigner.MainForm.resources
-C:\Users\wcss\Desktop\TableRobot\Code\TableRobotDesigner\obj\x86\Debug\TableRobotDesigner.Properties.Resources.resources
-C:\Users\wcss\Desktop\TableRobot\Code\TableRobotDesigner\obj\x86\Debug\TableRobotDesigner.csproj.GenerateResource.Cache
-C:\Users\wcss\Desktop\TableRobot\Code\TableRobotDesigner\obj\x86\Debug\TableRobotDesigner.exe
-C:\Users\wcss\Desktop\TableRobot\Code\TableRobotDesigner\obj\x86\Debug\TableRobotDesigner.pdb
