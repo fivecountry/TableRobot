@@ -74,7 +74,31 @@ namespace TableLib.Controls
 
         public void Insert(int index, TimeLineItemUI item)
         {
-            Add(item);
+            //绑定事件
+            item.Click += parent.item_Click;
+            //设置位置
+            item.Dock = DockStyle.Top;
+
+            //判断是否可以运行
+            if (parent.UIControl.Items.Count > index)
+            {
+                //将所有控件复制出来
+                TimeLineItemUI[] tempArray = new TimeLineItemUI[parent.UIControl.Items.Count];                
+                parent.UIControl.Items.CopyTo(tempArray, 0);
+
+                //执行插入操作
+                List<TimeLineItemUI> tempList = new List<TimeLineItemUI>(tempArray);
+                tempList.Insert(index, item);
+
+                //清空控件列表
+                parent.UIControl.Items.Clear();
+
+                //还原列表
+                foreach (TimeLineItemUI tli in tempList)
+                {
+                    parent.UIControl.Items.Add(tli);
+                }
+            }
         }
 
         public void RemoveAt(int index)
