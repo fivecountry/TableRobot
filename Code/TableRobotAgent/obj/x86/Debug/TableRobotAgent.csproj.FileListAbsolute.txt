@@ -1,0 +1,7 @@
+C:\Users\wcss\Desktop\TableRobot\Release\Agent\TableRobotAgent.exe
+C:\Users\wcss\Desktop\TableRobot\Release\Agent\TableRobotAgent.pdb
+C:\Users\wcss\Desktop\TableRobot\Code\TableRobotAgent\obj\x86\Debug\TableRobotAgent.csprojResolveAssemblyReference.cache
+C:\Users\wcss\Desktop\TableRobot\Code\TableRobotAgent\obj\x86\Debug\TableRobotAgent.Properties.Resources.resources
+C:\Users\wcss\Desktop\TableRobot\Code\TableRobotAgent\obj\x86\Debug\TableRobotAgent.csproj.GenerateResource.Cache
+C:\Users\wcss\Desktop\TableRobot\Code\TableRobotAgent\obj\x86\Debug\TableRobotAgent.exe
+C:\Users\wcss\Desktop\TableRobot\Code\TableRobotAgent\obj\x86\Debug\TableRobotAgent.pdb

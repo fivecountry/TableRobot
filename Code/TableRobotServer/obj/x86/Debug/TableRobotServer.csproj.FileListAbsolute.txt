@@ -1,0 +1,6 @@
+C:\Users\wcss\Desktop\TableRobot\Release\Server\TableRobotServer.exe
+C:\Users\wcss\Desktop\TableRobot\Release\Server\TableRobotServer.pdb
+C:\Users\wcss\Desktop\TableRobot\Code\TableRobotServer\obj\x86\Debug\TableRobotServer.Properties.Resources.resources
+C:\Users\wcss\Desktop\TableRobot\Code\TableRobotServer\obj\x86\Debug\TableRobotServer.csproj.GenerateResource.Cache
+C:\Users\wcss\Desktop\TableRobot\Code\TableRobotServer\obj\x86\Debug\TableRobotServer.exe
+C:\Users\wcss\Desktop\TableRobot\Code\TableRobotServer\obj\x86\Debug\TableRobotServer.pdb
