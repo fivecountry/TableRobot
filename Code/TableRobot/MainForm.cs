@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSScriptLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace TableRobot
 
     public partial class MainForm : Form
     {
+        public static string Time = DateTime.Now.ToString();
+
         public MainForm()
         {
             InitializeComponent();
@@ -26,7 +29,11 @@ namespace TableRobot
             Win32.POINT point;
             Win32.User.GetCursorPos(out point);
 
-            int hwnd = Win32.User.WindowFromPoint(point.x, point.y);
+            IntPtr activeWindowHwnd = new IntPtr(Win32.User.GetActiveWindow());
+            Win32.RECT rects = new Win32.RECT();
+            Win32.User.GetWindowRect(activeWindowHwnd, ref rects);
+
+            int hwnd = Win32.User.ChildWindowFromPointEx(activeWindowHwnd, point.x - rects.Left, point.y - rects.Top, 0x0000);
 
             KeyValuePair<string, string> ctrlClassAndTextObj = GetClassAndText(new IntPtr(hwnd));
 
@@ -71,7 +78,7 @@ namespace TableRobot
             if (!hWnd.Equals(IntPtr.Zero))
             {
                 //返回写字板编辑窗口句柄
-                IntPtr edithWnd = new IntPtr(Win32.User.FindWindowEx(hWnd, IntPtr.Zero, null, new StringBuilder("9")));
+                IntPtr edithWnd = new IntPtr(Win32.User.FindWindowEx(hWnd, IntPtr.Zero, new StringBuilder("Button"), new StringBuilder("9")));
                 if (!edithWnd.Equals(IntPtr.Zero))
                 {
                     // 发送WM_SETTEXT 消息： "Hello World!"
@@ -79,7 +86,7 @@ namespace TableRobot
                     Text = "1111111111";
                 }
             }
-
+            
             int hwnd = Win32.User.FindWindow(new StringBuilder(""), new StringBuilder());
             Message msg = Message.Create(new IntPtr(hwnd), 0x00F5, new IntPtr(0), new IntPtr(0));
             //点击hwnd_button句柄对应的按钮
@@ -94,6 +101,7 @@ namespace TableRobot
                 CallBack cbb = new CallBack(enumChildWindowsCallBack);
                 IntPtr methodHandle = Marshal.GetFunctionPointerForDelegate(cbb);
                 Win32.User.EnumChildWindows(hWnd, methodHandle, 0);
+                System.Console.WriteLine("VVVVVVVVVVVVVV");
             }
         }
 
@@ -102,6 +110,26 @@ namespace TableRobot
             KeyValuePair<string, string> kvp = GetClassAndText(new IntPtr(hwnd));
             System.Console.WriteLine(kvp.Key + "," + kvp.Value);
             return true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            StringBuilder dynamicString = new StringBuilder();
+            dynamicString.AppendLine("using TableLib;");
+            dynamicString.AppendLine("object shell(){");
+            dynamicString.AppendLine("");
+            dynamicString.AppendLine("");
+            dynamicString.AppendLine("");
+            dynamicString.AppendLine("");
+            dynamicString.AppendLine("");
+            dynamicString.AppendLine("");
+            dynamicString.AppendLine("");
+            dynamicString.AppendLine("");
+            dynamicString.AppendLine(" return \"OK!!!!!!!!!!!!!!+\" + InputAPI.Time;");
+            dynamicString.AppendLine("}");
+            var shell = CSScript.CreateFunc<object>(dynamicString.ToString());
+            object obj = shell();
+            System.Console.WriteLine(obj.ToString());
         }
     }
 }

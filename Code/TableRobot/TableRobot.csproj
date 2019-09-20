@@ -53,6 +53,9 @@
     <Reference Include="Aspose.Words">
       <HintPath>..\..\Lib\Aspose.Words.dll</HintPath>
     </Reference>
+    <Reference Include="CSScriptLibrary">
+      <HintPath>..\..\Lib\CSScriptLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Noear.Weed3">
       <HintPath>..\..\Lib\Noear.Weed3.dll</HintPath>
     </Reference>
