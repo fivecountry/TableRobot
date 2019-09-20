@@ -53,9 +53,38 @@
     <ApplicationIcon>robot_128px_1228948_easyicon.net.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSScriptLibrary">
+      <HintPath>..\..\Lib\CSScriptLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Noear.Weed3">
+      <HintPath>..\..\Lib\Noear.Weed3.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\Lib\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\Lib\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\Lib\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\Lib\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PESocket">
+      <HintPath>..\..\Lib\PESocket.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperCodeFactoryLib">
+      <HintPath>..\..\Lib\SuperCodeFactoryLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperCodeFactoryUILib">
+      <HintPath>..\..\Lib\SuperCodeFactoryUILib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
