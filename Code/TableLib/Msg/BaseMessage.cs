@@ -9,7 +9,7 @@ namespace TableLib.MsgAndSession
     public class BaseMessage : PEMsg
     {
         /// <summary>
-        /// 回复指令（用于收到指令后的回复）
+        /// 应答指令（用于收到指令后的回复）
         /// </summary>
         public const string COMMAND_REPLY = "COMMAND_REPLY";
 
@@ -82,5 +82,18 @@ namespace TableLib.MsgAndSession
         /// 附加数据
         /// </summary>
         public object Tag { get; set; }
+
+        /// <summary>
+        /// 生成回复消息
+        /// </summary>
+        /// <returns></returns>
+        public BaseMessage getReplyMessage()
+        {
+            BaseMessage msg = new BaseMessage();
+            msg.From = To;
+            msg.To = From;
+            msg.Command = Command;
+            return msg;
+        }
     }
 }
